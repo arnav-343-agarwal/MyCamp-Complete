@@ -3,10 +3,14 @@
 <h1 class="mb-3">All Campgrounds</h1>
 
 <% for(let campground of campgrounds){ %>
-    <div class="card mb-3">
+    <div class="card mb-2">
         <div class="row">
             <div class="col-md-4">
-                <img class="img-fluid" src="<%= campground.image %>" alt="" style="width: 400px; max-height: 280px;">
+                <% if(campground.images.length > 0){ %>
+                    <img class="img-fluid" src="<%= campground.images[0].url %>" alt="">
+                <% } else{%>
+                    <img class="img-fluid" src="https://res.cloudinary.com/diy2jq8ef/image/upload/v1720091529/YelpCamp-Complete/tewo8fulgk4mmfmnfmqc.jpg" alt="">
+                <% } %>
             </div>
             <div class="col-md-8">
                 <div class="card-body">
