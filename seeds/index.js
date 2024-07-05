@@ -1,5 +1,5 @@
 const Campground = require('../models/campground')
-const cities = require('./cities')
+const indianCities = require('./cities')
 const {descriptors,places} = require('./seedHelpers')
 const mongoose = require('mongoose');
 
@@ -14,18 +14,22 @@ const sample = array => array[Math.floor(Math.random() * array.length)]
 
 const seedDB = async()=>{
     await Campground.deleteMany({})
-    for(let i=0;i<50;i++){
+    for(let i=0; i < 200 ;i++){
         const random1000 = Math.floor(Math.random()*1000)
+        // const random100 = Math.floor(random1000/10);
         const price = Math.floor(Math.random()*20);
         const camp = new Campground({
             author:"6682241b820b9dbb191d2281",
             title:`${sample(descriptors)} ${sample(places)}`,
-            location:`${cities[random1000].city}, ${cities[random1000].state}`,
+            location:`${indianCities[random1000].city}, ${indianCities[random1000].state}`,
             description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nesciunt consectetur quidem eius, dolorum amet rerum harum ad ipsum exercitationem asperiores earum. Ea veritatis enim dolores, aspernatur nemo doloremque neque!",
             price:price,
             geometry: {
               type: 'Point',
-              coordinates: [ 75.815025, 26.9217 ] 
+              coordinates: [ 
+                indianCities[random1000].longitude,
+                indianCities[random1000].latitude
+              ] 
             },
             images:[
               {
