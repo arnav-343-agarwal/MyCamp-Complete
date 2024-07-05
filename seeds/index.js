@@ -1,5 +1,5 @@
 const Campground = require('../models/campground')
-const indianCities = require('./cities')
+const cities = require('./cities')
 const {descriptors,places} = require('./seedHelpers')
 const mongoose = require('mongoose');
 
@@ -21,14 +21,14 @@ const seedDB = async()=>{
         const camp = new Campground({
             author:"6682241b820b9dbb191d2281",
             title:`${sample(descriptors)} ${sample(places)}`,
-            location:`${indianCities[random1000].city}, ${indianCities[random1000].state}`,
+            location:`${cities[random1000].city}, ${cities[random1000].state}`,
             description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nesciunt consectetur quidem eius, dolorum amet rerum harum ad ipsum exercitationem asperiores earum. Ea veritatis enim dolores, aspernatur nemo doloremque neque!",
             price:price,
             geometry: {
               type: 'Point',
               coordinates: [ 
-                indianCities[random1000].longitude,
-                indianCities[random1000].latitude
+                cities[random1000].longitude,
+                cities[random1000].latitude
               ] 
             },
             images:[
