@@ -14,6 +14,7 @@ body {
 .nav-link {
     padding: 0.25rem 0;
     font-weight: 700;
+    /* font-size: 17px; */
     color: rgba(255,255,255,0.5);
     margin-left: 1rem;
     border-bottom: 0.25rem solid transparent;
@@ -33,4 +34,20 @@ body {
 .btn-secondary, .btn-secondary:hover{
     color: #333;
     text-shadow: none;
+}
+
+.username-display {
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.75);
+    margin-left: 1rem;
+    padding: 0.25rem 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0.25rem;
+    padding: 0.3rem 1rem;
+}
+
+.username-display::before {
+    content: 'Logged in as : ';
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.5);
 }
