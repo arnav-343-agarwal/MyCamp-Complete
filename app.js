@@ -26,8 +26,8 @@ const mongoose = require('mongoose');
 const { config } = require('dotenv')
 const MongoDBStore = require('connect-mongo')(session)
 
-// const dbUrl = process.env.DB_URL;
-const dbUrl = 'mongodb://127.0.0.1:27017/yelp-camp3'
+const dbUrl = process.env.DB_URL;
+// const dbUrl = 'mongodb://127.0.0.1:27017/yelp-camp3'
 mongoose.connect(dbUrl);
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
