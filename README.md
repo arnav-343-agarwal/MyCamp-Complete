@@ -1,6 +1,6 @@
-# YelpCamp
+# MyCamp
 
-**YelpCamp** is a comprehensive CRUD web development project that features both frontend and backend components. It allows users to interact with campground listings in a variety of ways. Here’s a detailed overview of its functionality:
+**MyCamp** is a comprehensive CRUD web development project that features both frontend and backend components. It allows users to interact with campground listings in a variety of ways. Here’s a detailed overview of its functionality:
 
 ## Features
 
